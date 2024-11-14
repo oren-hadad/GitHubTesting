@@ -1,6 +1,7 @@
 package com.example.githubtesting;
 
 import android.os.Bundle;
+import android.widget.LinearLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,7 +10,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-
+    LinearLayout LinearLayout;
+    board board;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +22,14 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        setContentView(R.layout.activity_main);
+        LinearLayout = (LinearLayout)findViewById(R.id.game);
+        board = new board(this);
+
+        LinearLayout.addView(board);
+        //setContentView(board);
+
 
 
 
